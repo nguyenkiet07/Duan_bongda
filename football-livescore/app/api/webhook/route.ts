@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   const chatId = body.message?.chat.id;
 
   // Chỉ cho ông mới có quyền sửa
-  /*if (chatId?.toString() !== process.env.MY_CHAT_ID) return Response.json({ ok: true });*/
+  if (chatId?.toString() !== process.env.MY_CHAT_ID) return Response.json({ ok: true });
 
   if (message?.startsWith('/up')) {
     const [_, id, score] = message.split(' ');
